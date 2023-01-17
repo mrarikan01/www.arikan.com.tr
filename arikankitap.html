@@ -1,0 +1,1409 @@
+<!doctype html>
+<html lang="tr"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>BörüKitap</title> <!-- normalize css --> 
+  <link rel="stylesheet" href="css/normalize.css"> <!-- fontawesome cdn link --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"> <!-- custom css --> 
+  <link rel="stylesheet" href="css/style.css"> 
+ <style type="text/css" id="dcoder_stylesheet">@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --lora: 'Lora', serif;
+    --mont: 'Montserrat', sans-serif;
+    --primary: #d2985e;
+    --secondary: #292929;
+    --snow: #f9f9f9;
+    --trans: all 0.3s ease-in-out;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--mont);
+}
+
+/* common stylings */
+.container{
+    max-width: 1210px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: var(--secondary);
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.text{
+    font-size: 15px;
+    line-height: 2;
+    font-family: var(--lora);
+    margin-bottom: 25px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border: 2px solid var(--primary);
+    font-weight: 500;
+    transition: var(--trans);
+}
+.btn-lg{
+    width: 200px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.btn-sm{
+    width: 170px;
+    font-size: 15px;
+}
+.btn:hover{
+    background-color: var(--primary);
+    color: #fff;
+}
+button{
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}
+.section-title{
+    text-align: center;
+}
+.section-title h2{
+    color: var(--primary);
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+.grid{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+
+
+/* header */
+.header-top{
+    height: 30px;
+    background-color: var(--secondary);
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+}
+.header-top .container{
+    justify-content: space-between;
+    width: 100%;
+}
+.header-top-left span{
+    display: inline-block;
+}
+.header-top-left span:first-child{
+    margin-right: 50px;
+}
+.header-top-btns li a{
+    color: #fff;
+    margin-left: 28px;
+    transition: var(--trans);
+}
+.header-top-btns li a:hover{
+    color: var(--primary);
+}
+.header-top-btn{
+    margin-left: 35px!important;
+}
+
+/* header - top navbar */
+.top-navbar{
+    height: 110px;
+}
+.top-navbar .container{
+    max-width: 1005px;
+    width: 100%;
+    justify-content: space-between;
+}
+.navbar-toggler{
+    display: none; /* hiding toggler btn for larger screen size */
+}
+.navbar-nav-right, .navbar-nav-left{
+    justify-content: space-between;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+}
+/* header - logo stylings */
+.navbar-brand{
+    width: 120px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 3px solid var(--secondary);
+    margin: 0 60px;
+    padding: 12px;
+    letter-spacing: 3px;
+    transition: var(--trans);
+}
+.navbar-brand .brand-text{
+    text-transform: uppercase;
+}
+.navbar-brand:hover{
+    background-color: var(--secondary);
+    color: #fff;
+}
+
+.nav-link{
+    transition: var(--trans);
+}
+.nav-link.active{
+    color: var(--primary);
+}
+.nav-link:hover{
+    color: var(--primary);
+}
+
+.header-banner{
+    background-color: var(--snow);
+}
+.header-banner .container{
+    justify-content: space-between;
+    max-width: 1005px;
+}
+.header-banner-left{
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+.header-banner-left h1{
+    color: var(--primary);
+    max-width: 430px;
+    margin-left: 0;
+    line-height: 1.3;
+    font-size: 40px;
+    font-family: var(--mont);
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.header-banner-right{
+    width: 345px;
+}
+
+
+/* header - bottom navbar */
+.bottom-navbar{
+    height: 60px;
+    background-color: var(--secondary);
+    color: #fff;
+    font-size: 13px;
+}
+.bottom-navbar .container{
+    width: 100%;
+    justify-content: space-between;
+}
+.links-and-inputs{
+    justify-content: flex-end;
+}
+.bottom-navbar .nav-link{
+    color: #fff;
+    margin-left: 12px;
+}
+.navbar-nav-bottom .nav-link:hover{
+    color: var(--primary);
+}
+.input-boxes{
+    width: 393px;
+    margin-left: 25px;
+}
+.input-box{
+    align-items: stretch;
+}
+.input-box .form-control{
+    padding: 15px;
+    height: 40px;
+    outline: 0;
+    border: none;
+}
+.input-box:first-child .form-control{
+    width: 220px;
+}
+.input-box:last-child .form-control{
+    width: 77px;
+}
+.input-box .form-btn{
+    width: 40px;
+    background-color: var(--primary);
+    border: none;
+    outline: 0;
+}
+.input-box .form-btn img{
+    width: 20px;
+    margin: 0 auto;
+}
+.input-box:last-child{
+    margin-left: 16px;
+}
+.input-box:last-child .form-control{
+    order: 2;
+}
+.input-box:last-child .form-btn{
+    order: 1;
+}
+.lang{
+    margin-right: 26px;
+}
+.lang img:first-of-type{
+    margin-right: 12px;
+}
+.lang img:last-of-type, .currency img:last-of-type{
+    margin-left: 5px;
+}
+
+/* popular section */
+#popular{
+    padding: 60px 0;
+}
+.btns-group{
+    margin-bottom: 85px;
+    flex-wrap: wrap;
+}
+.btn-item{
+    margin: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: var(--trans);
+}
+.btn-item.active{
+    color: var(--primary);
+}
+.btn-item:hover{
+    color: var(--primary);
+}
+.popular-item{
+    max-width: 270px;
+}
+.item-img{
+    position: relative;
+}
+.item-img::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: var(--trans);
+}
+.item-img:hover::after{
+    opacity: 1;
+}
+.view-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    opacity: 0;
+    transition: var(--trans);
+}
+.item-img:hover .view-icon{
+    opacity: 1;
+    z-index: 2;
+}
+.item-info{
+    text-align: center;
+    font-size: 15px;
+    padding: 20px 0;
+    font-weight: 500;
+}
+.item-info .name{
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+.item-info .price{
+    color: var(--primary);
+}
+
+
+/* collection section */
+#collection{
+    padding: 65px 0;
+    background-color: var(--snow);
+}
+#collection .section-title .text{
+    margin: 0 auto 40px auto;
+    max-width: 570px;
+}
+#collection .section-title .btn-sm{
+    margin: 0 auto;
+}
+.collection-grid{
+    margin-top: 65px;
+}
+.collection-item{
+    max-width: 270px;
+}
+.collection-item .item-img{
+    height: 200px;
+    overflow: hidden;
+}
+.collection-item .item-info .name{
+    margin-bottom: 0;
+}
+.collection-item .item-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* offer section */
+#offer{
+    height: 300px;
+    background-color: var(--secondary);
+}
+#offer .container span{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+}
+#offer .container span:first-child{
+    color: var(--primary);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+#offer .container span:last-child{
+    color: #fff;
+    font-size: 50px;
+}
+
+/* subs section */
+#subs{
+    height: 115px;
+    background-color: var(--snow);
+}
+#subs .container h3{
+    font-size: 20px;
+    margin-right: 90px;
+    font-weight: 500;
+}
+#subs .container .form-control{
+    height: 47px;
+    width: 470px;
+    border: 1px solid var(--primary);
+    outline: 0;
+    padding: 0 25px;
+    background-color: transparent;
+}
+#subs .container .btn-sm{
+    margin-left: 30px;
+    height: 47px;
+    width: 170px;
+    background-color: var(--primary);
+    color: #fff;
+    transition: var(--trans);
+}
+#subs .container .btn-sm:hover{
+    background-color: var(--secondary);
+}
+
+/* collection 2 section */
+#collection-2{
+    margin: 70px 0 65px 0;
+}
+#collection-2 .section-title{
+    margin-bottom: 65px;
+}
+#collection-2 .section-title > div{
+    justify-content: space-between;
+}
+#collection-2 .text{
+    width: 50%;
+    text-align: left;
+    max-width: 570px;
+    margin-bottom: 0;
+}
+#collection-2 .btns-group{
+    flex-wrap: wrap;
+    width: 50%;
+    margin-bottom: 0;
+}
+#collection-2 .btn-item{
+    height: 48px;
+    width: 100px;
+    border: 2px solid var(--primary);
+    margin: 12px 2px;
+}
+.collection-2-item{
+    max-width: 270px;
+}
+.collection-2-item .item-img{
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.collection-2-item .item-img img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+#collection-2 .btn-sm{
+    margin: 25px auto 0 auto;
+}
+
+/* about us */
+#about-us{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--snow);
+}
+.about-us-left{
+    background: url(../images/about_us_img.jpg) center/cover no-repeat;
+}
+.about-us-right{
+    padding: 65px 125px;
+}
+.about-us-right h4{
+    font-size: 25px;
+    font-weight: 500;
+}
+.about-us-right .navbar-brand{
+    display: block;
+    margin: 45px 0 40px 0;
+}
+
+/* footer */
+#footer{
+    background-color: var(--secondary);
+    color: #fff;
+    padding: 65px 0;
+}
+#footer .container{
+    align-items: flex-start;
+}
+.footer-item > h4{
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.footer-item.one .navbar-brand{
+    display: block;
+    color: var(--primary);
+    border-color: var(--primary);
+    margin: 0;
+    transition: var(--trans);
+}
+.footer-item.one .navbar-brand:hover{
+    background-color: #fff;
+    border-color: #fff;
+}
+.footer-item.one .text{
+    margin: 32px 0 50px 0;
+}
+.footer-item.one span{
+    font-size: 13px;
+}
+.footer-links li{
+    margin-bottom: 25px;
+}
+.footer-links li:last-child{
+    margin-bottom: 0;
+}
+.footer-links a{
+    color: #fff;
+    font-size: 13px;
+    transition: var(--trans);
+}
+.footer-links a:hover{
+    color: var(--primary);
+}
+.footer-item.four .text{
+    font-size: 13px;
+}
+.footer-item.four span{
+    display: block;
+    font-size: 15px;
+    padding: 15px;
+    border: 2px solid var(--primary);
+    margin: 40px 0 50px 0;
+}
+.footer-social-links{
+    justify-content: flex-start;
+}
+.footer-social-links a{
+    color: #fff;
+    transition: var(--trans);
+}
+.footer-social-links a:hover{
+    color: var(--primary);
+}
+.footer-social-links li{
+    margin: 0 15px;
+}
+
+
+
+
+/* Media queries */
+
+@media screen and (max-width: 1200px){
+    #footer .container{
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: flex-start;
+        row-gap: 45px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .popular-grid, .collection-grid, .collection-2-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #subs{
+        height: 280px;
+    }
+    #subs .container{
+        flex-direction: column;
+    }
+    #subs .container .form-control{
+        margin: 20px 0;
+    }
+    .about-us-right{
+        padding: 65px 75px;
+    }
+}
+
+
+@media screen and (max-width: 992px){
+    .top-navbar .container{
+        position: relative;
+    }
+    .navbar-brand{
+        margin-left: 0;
+    }
+    .navbar-toggler{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        transition: var(--trans);
+    }
+    .navbar-nav-left, .navbar-nav-right{
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        background-color: var(--primary);
+        right: 20px;
+        top: 100%;
+        width: 240px;
+        padding: 20px;
+    }
+    .navbar-nav-left li, .navbar-nav-right li{
+        margin: 12px 0;
+    }
+    .nav-link.active{
+        color: #fff;
+    }
+    .nav-link:hover{
+        color: #fff;
+    }
+    .navbar-nav-left{
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+    }
+    .navbar-nav-right{
+        top: 230px;
+        box-shadow: 0 10 12px 0 rgba(0, 0, 0, 0.1);
+    }
+    .showNav{
+        display: flex; /* js related styling */
+    }
+    .bottom-navbar{
+        height: auto;
+        padding: 20px 0;
+    }
+    .bottom-navbar .container{
+        flex-direction: column;
+    }
+    .links-and-inputs{
+        flex-direction: column;
+    }
+    .navbar-nav-bottom{
+        margin: 20px 0;
+    }
+    .navbar-nav-bottom li:first-child .nav-link{
+        margin-left: 0;
+    }
+    .input-boxes{
+        margin-left: 0;
+    }
+
+    #collection-2 .section-title > div{
+        flex-direction: column;
+    }
+    #collection-2 .text{
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #collection-2 .btns-group{
+        width: 100%;
+    }
+
+    #about-us{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .about-us-left{
+        height: 510px;
+    }
+    .about-us-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 65px 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header-top .container{
+        flex-direction: column;
+    }
+    .header-top-left{
+        display: none;
+    }
+    .header-top-btns{
+        margin-left: -28px;
+    }
+    .header-banner .container{
+        flex-direction: column;
+    }
+    .header-banner-left{
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .header-banner-left h1, .header-banner-left .btn, .header-banner-left p{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .header-banner-left p{
+        max-width: 600px;
+    }
+    .header-banner-right{
+        width: 60%;
+    }
+
+    #footer .container{
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+        justify-items: center;
+    }
+    .footer-item.one .navbar-brand{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .footer-item .text{
+        max-width: 570px;
+    }
+    .footer-social-links{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 678px){
+    #subs{
+        text-align: center;
+    }
+    #subs h3{
+        margin-right: 0!important;
+    }
+    #subs .form-control{
+        width: 100%!important;
+    }
+    #subs .btn-sm{
+        width: 100%!important;
+        margin-left: 0!important;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .links-and-inputs{
+        width: 100%;
+    }
+    .navbar-nav-bottom{
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-nav-bottom .nav-link{
+        display: block;
+        margin: 12px 0;
+    }
+    .input-boxes{
+        flex-direction: column;
+        width: 100%;
+    }
+    .input-box:first-child .form-control, .input-box:last-child .form-control{
+        width: auto;
+    }
+    .input-box:last-child{
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .popular-grid, .collection-grid, .collection-2-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* holder */
+.holder{
+    overflow-x: hidden;
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}</style></head> 
+ <body> 
+  <div class="holder"> <!-- header --> 
+   <header id="header"> 
+    <div class="header-top flex"> 
+     <div class="container flex"> 
+      <div class="header-top-left"> <span>İletişim </span> <span>sunucu linki </span> 
+      </div> 
+      <div class="header-top-right"> 
+       <ul class="header-top-btns flex"> 
+        <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li> 
+        <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li> 
+        <li> <a href="#"> <i class="fab fa-instagram"></i> </a> </li> 
+        <li><a href="#" class="header-top-btn">2.El 0 Tarzı </a></li> 
+        <li><a href="#" class="header-top-btn">Temiz Kitaplar </a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> <!-- top navbar --> 
+    <nav class="top-navbar flex"> 
+     <div class="container flex"> 
+      <ul class="navbar-nav-left flex"> 
+       <li> <a href="#" class="nav-link active">8.sınıf </a> </li> 
+       <li> <a href="#" class="nav-link">Okuma Kitabları</a> </li> 
+       <li> <a href="#" class="nav-link">Ucuz Kategori </a> </li> 
+       <li> <a href="#" class="nav-link">Denemeler </a> </li> 
+      </ul> <!-- logo --> <a href="#" class="navbar-brand flex"> <span class="brand-text">BörüKitap</span> </a> <!-- end of logo --> 
+      <ul class="navbar-nav-right flex"> 
+       <li> <a href="#" class="nav-link">SoruBankası</a> </li> 
+       <li> <a href="#" class="nav-link">KonuAnlatımı</a> </li> 
+       <li> <a href="#" class="nav-link">Kitab </a> </li> 
+       <li> <a href="#" class="nav-link">Deneme </a> </li> 
+      </ul> <!-- hamburger menu icon --> <button type="button" class="navbar-toggler"> <i class="fa fa-bars"></i> </button> <!-- end of hamburger menu icon --> 
+     </div> 
+    </nav> <!-- end of top navbar --> <!-- header banner --> 
+    <div class="header-banner"> 
+     <div class="container flex"> 
+      <div class="header-banner-left flex"> 
+       <h1>Sizi Bekleyen Birçok Kitap </h1> 
+       <p class="text"> Ucuz ve Kullanılmamış Kitapları Satın Al</p> Hızlı Ve Yeni Kitaplar İle Hizmetinizdeyiz. 
+       <p></p> <a href="#" class="btn btn-lg">BörüKitap</a> 
+      </div> 
+      <div class="header-banner-right"> 
+       <img src="https://r.resimlink.com/5LPsu8D3b.jpeg " alt=""> 
+      </div> 
+     </div> 
+    </div> <!-- end of header banner --> <!-- header bottom navbar --> 
+    <nav class="bottom-navbar flex"> 
+     <div class="container flex"> 
+      <div class="dropdowns flex"> 
+       <div class="lang flex"> 
+        <img src=""> <span>Tr</span> 
+        <img src=""> 
+       </div> 
+       <div class="currency flex"> <span>Tl</span> 
+        <img src=""> 
+       </div> 
+      </div> 
+      <div class="flex links-and-inputs"> 
+       <ul class="navbar-nav-bottom flex"> 
+        <li> <a href="#" class="nav-link">Alışveriş </a> </li> 
+        <li> <a href="#" class="nav-link">Kitaplar (+99)</a> </li> 
+        <li> <a href="#" class="nav-link">Okunacaklar</a> </li> 
+        <li> <a href="#" class="nav-link">Hakkımda</a> </li> 
+       </ul> 
+       <div class="input-boxes flex"> 
+        <div class="input-box flex"> 
+         <input type="text" placeholder="Search" class="form-control"> <button type="button" class="form-btn flex"> <img src="images/search_icon.png"> </button> 
+        </div> 
+        <div class="input-box flex"> 
+         <input type="text" placeholder="Price" value="En Düşük Fiyat 10Tl" class="form-control"> <button type="button" class="form-btn flex"> <img src="images/cart_icon.png"> </button> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </nav> <!-- end of header bottom navbar --> 
+   </header> <!-- end of header --> <!-- popular section --> 
+   <section id="popular"> 
+    <div class="container"> 
+     <div class="section-title"> 
+      <h2>Çok Satanlar</h2> 
+     </div> 
+     <div class="btns-group flex"> <button type="button" class="btn-item active">Popüler Kitablar</button> <button type="button" class="btn-item">Okuma Kitapları </button> <button type="button" class="btn-item">Soru Bankaları </button> <button type="button" class="btn-item">Konu Anlatımlı </button> 
+     </div> 
+     <div class="popular-grid grid"> 
+      <div class="popular-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfKjYh.jpg "> <button type="button" class="view-icon"> <i class="fa fa-eye"></i> </button> 
+       </div> 
+       <div class="item-info"> <span class="name">Okyanus Yayıncılık 8.Sınıf</span> <span class="price">₺40</span> 
+       </div> 
+      </div> 
+      <div class="popular-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfKsFU.jpg"> <button type="button" class="view-icon"> <i class="fa fa-eye"></i> </button> 
+       </div> 
+       <div class="item-info"> <span class="name">Tonguç 8.sınıf Dinamo Fen B. </span> <span class="price">₺25</span> 
+       </div> 
+      </div> 
+      <div class="popular-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfK2Sb.jpg"> <button type="button" class="view-icon"> <i class="fa fa-eye"></i> </button> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf Türkçe Pruva Akademi</span> <span class="price">₺65</span> 
+       </div> 
+      </div> 
+      <div class="popular-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfKUBs.jpg"> <button type="button" class="view-icon"> <i class="fa fa-eye"></i> </button> 
+       </div> 
+       <div class="item-info"> <span class="name">8.sınıf İsem Yayınları Konu A. İnkilab</span> <span class="price">₺70</span> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> <!-- end of popular section --> <!-- collection section --> 
+   <section id="collection"> 
+    <div class="container"> 
+     <div class="section-title"> 
+      <h2>Bu Yılın Ürünleri</h2> 
+      <p class="text">En Fazla 1 2 Yıl Önceki Ürünler Ve Bu Yılın Ürünleri Olmak Üzere Hasarsız Temiz Kullanılmamış Kitaplar İle Hizmetinizdeyiz</p> <a href="#" class="btn btn-sm">All Collection</a> 
+     </div> 
+     <div class="collection-grid grid"> 
+      <div class="collection-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfK3nt.jpg"> 
+       </div> 
+       <div class="item-info"> <span class="name">Av Yayınları 1.Dönem 3'lü Deneme</span> <span class="price">₺45</span> 
+       </div> 
+      </div> 
+      <div class="collection-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfKfMv.jpg"> 
+       </div> 
+       <div class="item-info"> <span class="name">Mozaik 12 Deneme</span> <span class="price">₺80</span> 
+       </div> 
+      </div> 
+      <div class="collection-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfqnpj.jpg"> 
+       </div> 
+       <div class="item-info"> <span class="name">Tonguç Türkçe </span> <span class="price">₺65</span> 
+       </div> 
+      </div> 
+      <div class="collection-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfKAep.jpg"> 
+       </div> 
+       <div class="item-info"> <span class="name">Tonguç İngilizce</span> <span class="price">₺55</span> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> <!-- end of collection section --> <!-- offer section --> 
+   <section id="offer" class="flex"> 
+    <div class="container"> <span>Yeni Sezon İndirimi </span> <span>%70e Varan İndirimler</span> 
+    </div> 
+   </section> <!-- end of offer section --> <!-- collection 2 --> 
+   <section id="collection-2"> 
+    <div class="container"> 
+     <div class="section-title"> 
+      <h2>Önemli Mesaj</h2> 
+      <div class="flex"> 
+       <p class="text">Merhaba Değerli Börü Kitap Kullanıcıları Bizi Seçtiğiniz İçin Teşekkürler Kitaplar Sizler İçin Temiz Hasarsız Kitaplar Almaktadır Uygun Fiyata Size Sunmaktadır Her Gün Yeni Kitaplar Eklenmektedir! </p> 
+       <div class="btns-group flex"> <button type="button" class="btn-item">Deneme</button> <button type="button" class="btn-item">Kitap</button> <button type="button" class="btn-item">SoruBankası</button> <button type="button" class="btn-item">KonuAnlatımlı</button> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="collection-2-grid grid"> 
+      <div class="collection-2-item"> 
+       <div class="item-img"> 
+        <img src="https://imgyukle.com/f/2022/10/20/nfqkaM.jpg"> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf Kondisyon Matematik</span> <span class="price">₺85</span> 
+       </div> 
+      </div> 
+      <div class="collection-2-item"> 
+       <div class="item-img"> 
+        <img src="https://r.resimlink.com/lUhdgG9n.jpeg"> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf Zoom Din Kültürü </span> <span class="price">₺85</span> 
+       </div> 
+      </div> 
+      <div class="collection-2-item"> 
+       <div class="item-img"> 
+        <img src="https://r.resimlink.com/UrOEYaLcKFQM.jpeg"> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf ALLSTAR Fen B.</span> <span class="price">₺85</span> 
+       </div> 
+      </div> 
+      <div class="collection-2-item"> 
+       <div class="item-img"> 
+        <img src="https://r.resimlink.com/kiIjwKFug1.jpeg"> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf Arı Y. Matematik</span> <span class="price">₺75</span> 
+       </div> 
+      </div> 
+      <div class="collection-2-item"> 
+       <div class="item-img"> 
+        <img src="https://r.resimlink.com/gJopv_HDWR.jpeg"> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf Ankara Y. Türkçe</span> <span class="price">₺85</span> 
+       </div> 
+      </div> 
+      <div class="collection-2-item"> 
+       <div class="item-img"> 
+        <img src="https://r.resimlink.com/dwzt6.jpeg"> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf Ankara Y. Dil Bilgisi</span> <span class="price">₺70</span> 
+       </div> 
+      </div> 
+      <div class="collection-2-item"> 
+       <div class="item-img"> 
+        <img src="https://r.resimlink.com/ASQW568GimU.jpeg"> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf Ankara Y. İngilizce</span> <span class="price">₺70</span> 
+       </div> 
+      </div> 
+      <div class="collection-2-item"> 
+       <div class="item-img"> 
+        <img src="https://r.resimlink.com/_u6ld18HCv5f.jpeg"> 
+       </div> 
+       <div class="item-info"> <span class="name">8.Sınıf Ankara Y. Din Kültürü</span> <span class="price">₺75</span> 
+       </div> 
+      </div> 
+     </div> <a href="#" class="btn btn-sm">Kitap Alışverişinde Tek Yer</a> 
+    </div> 
+   </section> <!-- end of collection 2 --> <!-- about us section --> 
+   <section id="about-us"> 
+    <div class="about-us-left"></div> 
+    <div class="about-us-right"> 
+     <h4>Ucuz Temiz Kitaplar</h4> <a href="#" class="navbar-brand">Hata❌</a> 
+     <p class="text">Ucuz Güvenilir Tek Adres BörüKitap 2.El Ama 0 Gibi </p> <a href="#" class="btn btn-sm">İlerle👇</a> 
+    </div> 
+   </section> <!-- end of about us section --> <!-- footer --> 
+   <footer id="footer"> 
+    <div class="container grid"> 
+     <div class="footer-item one"> <a href="#" class="navbar-brand"><span class="brand-text">couture</span></a> 
+      <p class="text">HerGün Kitaplar Yenilemekte Kitapların Basım Yılı Değişebilir İletişime Geçerek Öğrenebilirsiniz</p> <span>Börü Kitap 2022</span> 
+     </div> 
+     <div class="footer-item"> 
+      <h4>Okunacaklar</h4> 
+      <ul class="footer-links"> 
+       <li><a href="#">Hoşgeldin </a></li> 
+       <li><a href="#">Kitablar</a></li> 
+       <li><a href="#">Okunacak Yazı </a></li> 
+       <li><a href="#">İletişim Discord MrArıkan#2457 </a></li> 
+       <li><a href="#">Destekleyici Yok</a></li> 
+       <li><a href="#">Ucuz Kitaplar</a></li> 
+      </ul> 
+     </div> 
+     <div class="footer-item"> 
+      <h4>Alışveriş </h4> 
+      <ul class="footer-links"> 
+       <li><a href="#">Alışveriş</a></li> 
+       <li><a href="#">Okuma Kitabı </a></li> 
+       <li><a href="#">Soru Bankası </a></li> 
+       <li><a href="#">Konu Anlatımlı</a></li> 
+       <li><a href="#">Deneme</a></li> 
+       <li><a href="#">BörüKitab</a></li> 
+      </ul> 
+     </div> 
+     <div class="footer-item four"> 
+      <h4>Ödeme Yöntemi</h4> 
+      <p class="text"> Ödeme Yöntemi Sadece İninal İletişim Discord Üzerinden </p> <span><a href="https://discord.gg/bMx3XVyb">Discord </a> </span> 
+      <ul class="footer-social-links flex"> 
+       <li><a href="#"> <i class="fab fa-discord"></i> </a></li> 
+       <li><a href="#"> <i class="fab fa-youtube"></i> </a></li> 
+       <li><a href="#"> <i class="fab fa-whatsaap"></i> </a></li> 
+       <li><a href="#"> <i class="fab fa-pinterest"></i> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </footer> <!-- end of footer --> 
+  </div> 
+  <script src="js/script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">const topNavOne = document.querySelector('.navbar-nav-right');
+const topNavTwo = document.querySelector('.navbar-nav-left');
+
+const navbarToggler = document.querySelector('.navbar-toggler');
+navbarToggler.addEventListener('click', () => {
+    topNavOne.classList.toggle('showNav');
+    topNavTwo.classList.toggle('showNav');
+});</script></body></html>
